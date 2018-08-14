@@ -1,3 +1,105 @@
-<p>
-  staff-list works!
-</p>
+<header>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+<body>
+	<div class="header">
+		<h1>Thông tin tìm kiếm</h1>
+
+		<div class="search">
+			<div class="column-left">
+				<div class="column">
+					<label>Code</label>
+					<span><input type="text"></span>
+				</div><br>
+				<div class="column">
+					<label>Địa chỉ</label>
+					<span><input type="text"></span>
+				</div><br>
+				<div class="column">
+					<label>Trạng thái</label>
+					<span><input type="text"></span>
+				</div><br>
+			</div>
+
+			<div class="column-center">
+				<div class="column">
+					<label>Tên thành viên</label>
+					<span><input type="text"></span>
+				</div><br>
+				<div class="column">
+					<label>Giới tính</label>
+					<span><input type="text"></span>
+				</div><br>
+				<div class="column">
+					<label>Vị trí</label>
+					<span><input type="text"></span>
+				</div><br>
+			</div>
+
+			<div class="column-right">
+				<div class="column">
+					<label>Ngày sinh</label>
+					<span><input type="text"></span>
+				</div><br>
+				<div class="column">
+					<label>Ngày bắt đầu <br> làm việc</label>
+					<span><input type="text"></span>
+				</div><br>
+			</div>
+		</div>
+
+		<div class="button-search">
+			<button >TÌM KIẾM</button>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="button-add">
+			<button>Thêm</button>
+		</div>
+		<div class="content-detail">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>STT</th>
+						<th>Họ và tên</th>
+						<th>Giới tính</th>
+						<th>Ngày sinh</th>
+						<th>Số điện thoại</th>
+						<th>Email</th>
+						<th>Trình độ</th>
+						<th>Trạng thái</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let staff of list;let i = index">
+						<td>{{i+1}}</td>
+						<td>{{staff.name}}</td>
+						<td>{{staff.gender}}</td>
+						<td>{{staff.birthday}}</td>
+						<td>{{staff.phone}}</td>
+						<td>{{staff.email}}</td>
+						<td>{{staff.degree}}</td>
+						<td>{{staff.lookStatus}}</td>
+						<td><a href="#"><button id="detail">Chi tiết</button></a>
+							<a href="#"><i class="fa fa-edit" id="edit"></i></a>
+							<a href="#"><i class="fa fa-remove" id="delete"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="get-out">
+			<a href="#"><button id="out">Xuất</button></a>
+		</div>
+
+		<div id="check-pages">
+			<a href="#"><button class="pages-number">1</button></a>
+			<a href="#"><button class="pages-number">2</button></a>
+			<a href="#"><button class="pages-number">3</button></a>
+			>>
+		</div>
+	</div>
+</body>

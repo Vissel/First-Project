@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Router,ActivatedRoute} from '@angular/router'
+
 //services
 import {StaffService} from './../staff.service'
 
 //model
-import {Staff} from './../../model/staff.class'
+import {Staff} from './../../../../model/staff.class'
 
 @Component({
   selector: 'app-staff-list',
@@ -15,16 +17,16 @@ export class StaffListComponent implements OnInit {
 	public list : Staff[] = []
 
   constructor(
-  	private staffService: StaffService
+  	private staffService: StaffService,
+    public routerService: Router
   	) { 
 		
   }
 
   ngOnInit() {
-	
 	this.list = this.staffService.getAllList()
-	console.log(this.list)
-
+	// console.log(this.list)
   }
+ 
 
 }

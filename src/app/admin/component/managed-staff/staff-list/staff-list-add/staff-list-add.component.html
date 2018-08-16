@@ -24,8 +24,8 @@
 						<label>Giới tính</label>
 						<span>
 							<select name="gender" id="" #gender>
-								<option value="male">Nam</option>
-								<option value="female">Nữ</option>
+								<option value="1">Nam</option>
+								<option value="0">Nữ</option>
 								<option value="">Khác</option>
 							</select>
 						</span>
@@ -65,15 +65,18 @@
 						<label>Số thẻ ATM <label style="color: red">*</label></label>
 						<span><input type="number" #atm_number></span>
 					</div><br>
-					
+					<div class="column">
+						<label>Mã số thuế </label>
+						<span><input type="number" #tax_code ></span>
+					</div><br>
 					<div class="column">
 						<label>Trình độ</label>
 						<span>
 							<select name="level" id="" #degree>
-								<option value="university">Đại học</option>
-								<option value="college">Cao đẳng</option>
-								<option value="high-school">Trung học</option>
-								<option value="">Khác</option>
+								<option value="Đại học">Đại học</option>
+								<option value="Cao đẳng">Cao đẳng</option>
+								<option value="Trung học">Trung học</option>
+								<option value="Khác">Khác</option>
 							</select>
 						</span>
 					</div><br>
@@ -109,10 +112,10 @@
 						<label>Trạng thái</label>
 						<span>
 							<select name="state" id="state" #state>
-								<option value="working">Đang làm việc</option>
-								<option value="inactivity">Đã nghỉ việc</option>
-								<option value="inspect">Đang chờ xem xét</option>
-								<option value="">Khác</option>
+								<option value="1">Đang làm việc</option>
+								<option value="0">Đã nghỉ việc</option>
+								<option value="2">Đang chờ xem xét</option>
+								<option value="-1">Khác</option>
 							</select>
 						</span>
 					</div><br>
@@ -121,7 +124,7 @@
 
 			<div class="button">
 				<button id="ignore">Bỏ qua</button>
-				<button id="add" (click)="addStaff(code.value,name.value,gender.value,birthday.value,phone.value,email.value,degree.value,state.value)">Thêm</button>
+				<button id="add" (click)="addStaff(code.value,name.value,gender.value,birthday.value,phone.value,email.value,degree.value,state.value)" [routerLink]="['/']">Thêm</button>
 			</div>
 		</div>
 	</div>

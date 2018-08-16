@@ -55,7 +55,8 @@
 
 	<div class="content">
 		<div class="button-add">
-			<button>Thêm</button>
+			<button id="add" [routerLink]="['/staff/staff-list-add']">Thêm</button>
+			<button id="out">Xuất</button>
 		</div>
 		<div class="content-detail">
 			<table class="table">
@@ -73,26 +74,32 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let staff of list;let i = index">
-						<td>{{i+1}}</td>
+					<tr *ngFor="let staff of list">
+						<td>{{staff.id}}</td>
 						<td>{{staff.name}}</td>
-						<td>{{staff.gender}}</td>
+						<td> {{staff.gender == 1 ? 'Nam' : 'Nữ'}}</td>
 						<td>{{staff.birthday}}</td>
 						<td>{{staff.phone}}</td>
 						<td>{{staff.email}}</td>
 						<td>{{staff.degree}}</td>
-						<td>{{staff.lookStatus}}</td>
-						<td><a href="#"><button id="detail">Chi tiết</button></a>
-							<a href="#"><i class="fa fa-edit" id="edit"></i></a>
-							<a href="#"><i class="fa fa-remove" id="delete"></i></a>
+
+						<td *ngIf="staff.lookStatus == 1 ">Đang làm việc</td>
+						<td *ngIf="staff.lookStatus == 0 ">Đã nghỉ việc</td>
+						<td *ngIf="staff.lookStatus == 2 ">Đang xem xét</td>
+						<td *ngIf="staff.lookStatus == -1">Khác</td>
+
+						<td><button id="detail" 
+ 							[routerLink]="['/staff', staff.id]"
+							>Chi tiết</button>
+							<i class="fa fa-edit" id="edit"></i>
+							<i class="fa fa-remove" id="delete"></i>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-		</div>
-
+		</div>  
 		<div id="get-out">
-			<a href="#"><button id="out">Xuất</button></a>
+			<button id="out">Xuất</button>
 		</div>
 
 		<div id="check-pages">

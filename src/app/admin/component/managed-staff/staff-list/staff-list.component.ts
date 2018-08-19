@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 import {Router,ActivatedRoute} from '@angular/router'
 
@@ -14,10 +14,13 @@ import {Staff} from './../../../../model/staff.class'
   styleUrls: ['./staff-list.component.scss']
 })
 export class StaffListComponent implements OnInit {
-	public list : Staff[] = []
+	public list : Staff[] = [];
+  public staff : Staff = null;
 
+  public isDisplay : boolean ;
+  
   constructor(
-  	private staffService: StaffService,
+  	public staffService: StaffService,
     public routerService: Router
   	) { 
 		
@@ -27,6 +30,7 @@ export class StaffListComponent implements OnInit {
 	this.list = this.staffService.getAllList()
 	// console.log(this.list)
   }
- 
+   
+   
 
 }

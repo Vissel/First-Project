@@ -1,4 +1,4 @@
-body{
+.body{
 	margin: 0;
 	padding: 0;
 	border :0;
@@ -7,6 +7,8 @@ body{
 	vertical-align: baseline;
 	background: transparent;
 	font-family: Arial;
+	position: inherit;
+	z-index: -1;
 }
 
 h1 {
@@ -59,6 +61,9 @@ span {
 }
 input {
 	width: 230px
+}
+span {
+	width: 230px;
 }
 .button-search {
 	text-align: center;
@@ -157,7 +162,7 @@ i{
 	height: 15px;
 	color: white;
 	background-color: red;
-	padding: 5px;
+	padding: 8px 20px 22px 10px;
 }
 #detail:hover {
 	background: rgb(0, 0, 153);

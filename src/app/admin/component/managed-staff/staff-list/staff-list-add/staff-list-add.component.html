@@ -1,24 +1,29 @@
-<body>
+
+<div class="body">
 	<div class="container">
 		<div class="title">
 			<h1>THÊM NHÂN VIÊN</h1>
 		</div>
-
+		
+		<form [formGroup]="form">
 		<div class="content">
 
 			<div class="content-detail">
 				<div class="column-left">
+					<p *ngIf="(!form.controls['name'].valid) && (form.controls['name'].touched)">*{{titleAlert}}</p>
 					<div class="column">
 						<label>Họ tên <label style="color: red">*</label></label>
-						<span><input type="text" #name></span>
+						<span><input type="text" #name formControlName="name"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['code'].valid) && (form.controls['code'].touched)">*{{titleAlert}}</p>
 					<div class="column">
 						<label>Mã NV <label style="color: red">*</label></label>
-						<span><input type="text" #code></span>
+						<span><input type="text" #code formControlName="code"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['birthday'].valid) && (form.controls['birthday'].touched)">
 					<div class="column">
 						<label>Ngày sinh <label style="color: red">*</label></label>
-						<span><input type="text" #birthday></span>
+						<span><input type="date" #birthday formControlName="birthday" ></span>
 					</div><br>
 					<div class="column">
 						<label>Giới tính</label>
@@ -30,40 +35,50 @@
 							</select>
 						</span>
 					</div><br>
+					<p *ngIf="form.controls.phone.invalid && (form.controls.phone.touched)">*Số điện thoại phải từ 10 hoặc 11 số</p>
 					<div class="column">
 						<label>Số điện thoại <label style="color: red">*</label></label>
-						<span><input type="text" #phone></span>
+						<span><input type="string" #phone formControlName="phone"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['address'].valid) && (form.controls['address'].touched)"> {{titleAlert}}
 					<div class="column">
 						<label>Địa chỉ thường trú <label style="color: red">*</label></label>
-						<span><input type="text" #address></span>
+						<span><input type="text" #address formControlName="address"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['temporary'].valid) && (form.controls['temporary'].touched)"> 		{{titleAlert}}
 					<div class="column">
 						<label>Đại chỉ tạm trú <label style="color: red">*</label></label>
-						<span><input type="text" #temporary_address></span>
+						<span><input type="text" #temporary_address formControlName="temporary"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['passportNumber'].valid) && (form.controls['passportNumber'].touched)"> Số CMND/HC không hợp lệ
 					<div class="column">
 						<label>Số CMND/HC <label style="color: red" >*</label></label>
-						<span><input type="number" #passport_number></span>
+						<span><input type="number" #passport_number 
+							formControlName="passportNumber"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['dateOfIssue'].valid) && (form.controls['dateOfIssue'].touched)"> {{titleAlert}}
 					<div class="column">
 						<label>Ngày cấp CMND/HC <label style="color: red">*</label></label>
-						<span><input type="number" #passport_date></span>
+						<span><input type="date" #passport_date formControlName="dateOfIssue"></span>
 					</div><br>
+					<p *ngIf="(!form.controls['placeOfIssue'].valid) && (form.controls['placeOfIssue'].touched)"> {{titleAlert}}
 					<div class="column">
 						<label>Nơi cấp CMND/HC <label style="color: red">*</label></label>
-						<span><input type="text" #passport_place></span>
+						<span><input type="text" #passport_place formControlName="placeOfIssue"></span>
 					</div><br>
 					
 				</div>
+
 				<div class="column-right">
+					<p *ngIf="(!form.controls['email'].valid) && (form.controls['email'].touched)"> {{titleAlert}}
 					<div class="column">
 						<label>Email <label style="color: red">*</label></label>
-						<span><input type="email" #email></span>
+						<span><input type="email" name="email" #email formControlName="email"></span>
 					</div><br>
-					<div class="column">
-						<label>Số thẻ ATM <label style="color: red">*</label></label>
-						<span><input type="number" #atm_number></span>
+					<p *ngIf="(!form.controls['atmNumber'].valid) && (form.controls['atmNumber'].touched)"> {{titleAlert}}
+						<div class="column">
+						<label>Số thẻ tài khoản ngân hàng <label style="color: red">*</label></label>
+						<span><input type="text" #atm_number formControlName="atmNumber"></span>
 					</div><br>
 					<div class="column">
 						<label>Mã số thuế </label>
@@ -82,19 +97,20 @@
 					</div><br>
 					<div class="column">
 						<label>Ngày bắt đầu thử việc</label>
-						<span><input type="text" #start_fresher></span>
+						<span><input type="date" #start_fresher 
+							formControlName="startProbation"></span>
 					</div><br>
 					<div class="column">
 						<label>Ngày kết thúc thử việc</label>
-						<span><input type="text" #end_fresher></span>
+						<span><input type="date" #end_fresher formControlName="endProbation"></span>
 					</div><br>
 					<div class="column">
 						<label>Ngày bắt đầu làm việc</label>
-						<span><input type="text" #start_work></span>
+						<span><input type="date" #start_work formControlName="startWorking"></span>
 					</div><br>
 					<div class="column">
 						<label>Ngày kết thúc làm việc</label>
-						<span><input type="text" #end_work></span>
+						<span><input type="date" #end_work formControlName="endWorking"></span>
 					</div><br>
 					<div class="column">
 						<label>Vị trí</label>
@@ -123,11 +139,10 @@
 			</div>
 
 			<div class="button">
-				<button id="ignore">Bỏ qua</button>
-				<button id="add" (click)="addStaff(code.value,name.value,gender.value,birthday.value,phone.value,email.value,degree.value,state.value)" [routerLink]="['/']">Thêm</button>
+				<button id="ignore" [routerLink]="['/admin/staff/staff-list']">Bỏ qua</button>
+				<button id="add" (click)="addStaff(code.value,name.value,gender.value,birthday.value,phone.value,email.value,degree.value,state.value)" [routerLink]="['/admin/staff/']" [disabled]="form.invalid">Thêm</button>
 			</div>
 		</div>
+		</form>
 	</div>
-
-
-</body>
+</div>

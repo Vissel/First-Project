@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Router} from '@angular/router'
-
 @Component({
   selector: 'app-managed-staff',
   templateUrl: './managed-staff.component.html',
@@ -9,13 +7,9 @@ import {Router} from '@angular/router'
 })
 export class ManagedStaffComponent implements OnInit {
 
-  constructor(
-  	private routerService : Router
-  	) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  //staff detail
-  
 
 }

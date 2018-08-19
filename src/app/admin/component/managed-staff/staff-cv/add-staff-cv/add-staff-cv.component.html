@@ -1,0 +1,67 @@
+
+	<div class="container">
+		<div class="title">
+			<h1>THÊM HỒ SƠ</h1>
+		</div>
+
+		<div class="content">
+
+			<div class="content-detail">
+				<div class="column-left">
+					<div class="column">
+						<label>Họ và tên: <label style="color: red">*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.name" /></span>
+					</div><br>
+					<div class="column">
+						<label>Ngày ứng tuyển: <label style="color: red">*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.ngayUngTuyen" ></span>
+					</div><br>
+					<div class="column">
+						<label>Vị trí ứng tuyển: <label style="color: red">*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.viTriUTuyen"></span>
+					</div><br>
+
+					<div class="column">
+						<label>Người giới thiệu: <label style="color: red">*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.nguoiGThieu"></span>
+					</div><br>
+					<div class="column">
+						<label>Email: <label style="color: red">*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.email" ></span>
+					</div><br>
+					<div class="column">
+						<label>Số điện thoại: <label style="color: red" >*</label></label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.phone" ></span>
+					</div><br>
+					<div class="column">
+						<label>Kết quả: </label>
+						<span>
+							<select >
+								<option value="">Đang kiểm duyệt</option>
+								<option value="">Đã kiểm duyệt</option>
+								<option value="">Khác</option>
+							</select>
+						</span>
+					</div><br>
+
+					<div class="column">
+						<label>Ghi chú: </label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.note" ></span>
+					</div><br>
+					<div class="column">
+						<label>Link CV</label>
+						<span><input [(ngModel)] ="this.managerStaffService.staff.link_cv" ></span>
+					</div><br>
+
+				</div>
+			</div>
+
+			<div class="button">
+				<button id="ignore"  type="button" class="btn btn-info" (click)="next()">Bỏ qua </button>
+				<button id="add" type="button" class="btn btn-info" (click)="add()">Thêm
+				</button>
+			</div>
+		</div>
+	
+</div>
+

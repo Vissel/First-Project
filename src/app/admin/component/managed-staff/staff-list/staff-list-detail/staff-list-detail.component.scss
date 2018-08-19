@@ -1,13 +1,4 @@
-body{
-	margin:0;
-	padding:0;
-	border: 0;
-	font-size: 100%;
-	outline: 0;
-	vertical-align: baseline;
-	background: transparent;
-	font-family: Arial;
-}
+
 .path{
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -30,6 +21,7 @@ h1{
 	margin-left: 100%;
 	margin-top: 0%;
 	color: #0000cc;
+	background: white;
 }	
 
 .content{
@@ -41,7 +33,7 @@ h1{
 	// margin-left:3%;
 	// margin-top: 3%;
 	top:40px;
-	bottom: 40px;
+	margin-bottom: 40px;
 	// left: 30px;
 
 }
@@ -93,10 +85,15 @@ label {
 input {
 	width: 230px;
 }
-
+span {
+	width: 230px;
+}
 /*---button---*/
 .button{
 	text-align: left;
+}
+.button-confirm {
+	text-align: center
 }
 button {
 	border:none;
@@ -105,7 +102,7 @@ button {
 	color: white;
 	border-radius: 5px;
 	font-weight: bold;
-	width: 130px;
+	width: 150px;
 }
 #add {
 	
@@ -124,4 +121,19 @@ button {
 }
 #update:hover {
 	background: #000066
+}
+#ignore {
+	background: red;
+	margin-right: 50px;
+	cursor: pointer;
+}
+#ignore:hover {
+	background: #990000
+}
+p {
+	font-size: 12px;
+	color: red;
+	margin-left: 40%;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }

@@ -80,7 +80,7 @@ input {
 .content {
 	max-width: 100%;
 	max-height: 100%;
-	margin: 20px auto 0 0px;
+	margin: 20px auto 0 20px;
 	
 }
 ///button add
@@ -88,18 +88,17 @@ input {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-.button-add #add{
+.button-add button{
 	font-weight: bold;
 	border : none;
 	padding: 7px 25px;
 	color : white;
-	background: #3366cc;
+	background: #cc6600;
 	border-radius: 5px;
 	cursor: pointer;
-	margin-right: 10px;
 }
-.button-add #add:hover {
-	background: #000099;
+.button-add button:hover {
+	background: #ff6600;
 }
 
 table{
@@ -129,7 +128,7 @@ th{
 td{
 	// padding:5px;
 }
-#detail{
+a #detail{
 	background-color: #63F;
 	border: none;
 	color: white;
@@ -150,30 +149,31 @@ i{
 	height: 15px;
 	color: white;
 	background: #1eacbe;
-	padding: 5px;
+	padding: 5px 15px 15px 5px;
 }
 #delete{
 	width: 15px;
 	height: 15px;
 	color: white;
 	background-color: red;
-	padding: 5px;
+	padding: 5px 15px 15px 5px;
 }
-#detail:hover {
+a #detail:hover {
 	background: rgb(0, 0, 153);
 }
-#edit:hover {
+a #edit:hover {
 	background: #0000ff;
 }
-#delete:hover {
+a #delete:hover {
 	background: #800000;
 }
 
 /*---get out---*/
-#get-out{
-	// margin-left:95%;
-	text-align: right;
+#get-out button{
+	color: white;
+	background-color:#826a0e;
 	// margin-right: 0%;
+	float: right
 }
 
  #out{
@@ -187,7 +187,7 @@ i{
 	margin-top: 10px;
 	cursor: pointer;
 }
- #out:hover {
+a #out:hover {
 	background: rgb(204, 51, 1);
 }
 
@@ -205,6 +205,6 @@ a .pages-number {
 	display: inline-block;
 	// cursor: pointer;
 }
-a .pages-number:hover {
-	background: rgb(153, 204, 255);
+.pages-number:hover {
+	float:center ;
 }

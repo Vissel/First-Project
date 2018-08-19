@@ -1,7 +1,7 @@
 <header>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </header>
-<body>
+<div class="body">
 	<div class="header">
 		<h1>Thông tin tìm kiếm</h1>
 
@@ -55,7 +55,7 @@
 
 	<div class="content">
 		<div class="button-add">
-			<button id="add" [routerLink]="['/staff/staff-list-add']">Thêm</button>
+			<button id="add" [routerLink]="['/admin/staff/staff-list-add']">Thêm</button>
 			<button id="out">Xuất</button>
 		</div>
 		<div class="content-detail">
@@ -89,9 +89,11 @@
 						<td *ngIf="staff.lookStatus == -1">Khác</td>
 
 						<td><button id="detail" 
- 							[routerLink]="['/staff', staff.id]"
-							>Chi tiết</button>
-							<i class="fa fa-edit" id="edit"></i>
+ 							[routerLink]="['/admin/staff', staff.id]"
+							> <!-- <span *ngIf="isDisplay">
+									[isDisable]="isDisplay"</span> -->
+								Chi tiết</button>
+							
 							<i class="fa fa-remove" id="delete"></i>
 						</td>
 					</tr>
@@ -109,4 +111,4 @@
 			>>
 		</div>
 	</div>
-</body>
+</div>
